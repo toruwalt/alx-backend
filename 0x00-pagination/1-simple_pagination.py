@@ -41,7 +41,7 @@ class Server:
         assert isinstance(page_size, int)
         assert page > 0 and page_size > 0
 
-        page_ranges = Server.index_range(page, page_size)
+        page_ranges = Server.index_range(self, page, page_size)
         startIndex: int = page_ranges[0]
         endIndex: int = page_ranges[-1]
         page_list = [i for i in Server.dataset(self)[startIndex:endIndex]]
