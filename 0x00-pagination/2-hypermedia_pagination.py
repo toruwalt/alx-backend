@@ -62,6 +62,16 @@ class Server:
         return x
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+        """
+        Gets data and a few other details
+        
+        Args:
+            page: The selected page(type int)
+            page_size: The total number allowed per page
+
+        Returns:
+            result: A dictionary containing details of page
+        """
         count = 0
         for i in Server.dataset(self):
             count += 1
@@ -69,7 +79,7 @@ class Server:
         result = {
             'page_size': page_size,
             'page': page,
-            'data': Server.get_page(self, page, page_size),
+            'data': self.get_page(self, page, page_size),
             'next_page': page + 1 if page < math.floor(count / page_size) else None,
             'prev_page': page - 1 if page > 1 else None,
             'total_pages': math.floor(count / page_size)
