@@ -61,7 +61,7 @@ class Server:
         x: Tuple = (start_index, end_index)
         return x
 
-    def get_hyper(self, page: int = 1, page_size: int = 10):
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         count = 0
         for i in Server.dataset(self):
             count += 1
