@@ -65,7 +65,6 @@ class Server:
         count = 0
         for i in Server.dataset(self):
             count += 1
-        total_pages = math.floor(count / page_size)
         
         result = {
             'page_size': page_size,
