@@ -8,7 +8,7 @@ from base_caching import BaseCaching
 
 class FIFOCache(BaseCaching):
     """Inherited Cache Class"""
-    def init(self):
+    def __init__(self):
         """Initialization method"""
         super().__init__()
         self.cache_data = OrderedDict()
