@@ -2,7 +2,6 @@
 """Basic FIFO Caching System.
 """
 from base_caching import BaseCaching
-from collections import OrderedDict
 
 
 class FIFOCache(BaseCaching):
@@ -10,7 +9,6 @@ class FIFOCache(BaseCaching):
     def init(self):
         """Initialization method"""
         super().__init__()
-        self.cache_data = OrderedDict()
 
     def put(self, key, item):
         """Method to put item into cache at index key"""
