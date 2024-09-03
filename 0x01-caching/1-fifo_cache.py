@@ -30,10 +30,3 @@ class FIFOCache(BaseCaching):
         """Method to get item from cache at index key"""
         if key is not None and key in self.cache_data:
             return self.cache_data[key]
-<<<<<<< HEAD
-        else:
-            return None
-=======
-
-
->>>>>>> parent of 8503eb4 (Caching - Task 1:Attempt 2)
