@@ -12,8 +12,8 @@ class FIFOCache(BaseCaching):
 
     def put(self, key, item):
         """Method to put item into cache at index key"""
-        if type(key) is None or type(item) is None:
-            pass
+        if key is None or item is None:
+            return
         else:
             if key in self.cache_data:
                 self.cache_data[key] = item
@@ -29,4 +29,4 @@ class FIFOCache(BaseCaching):
     def get(self, key):
         """Method to get item from cache at index key"""
         if key is not None and key in self.cache_data:
-            return self.cache_data[key]
+            return self.cache_data.get(key, None)
