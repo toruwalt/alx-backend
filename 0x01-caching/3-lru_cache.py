@@ -26,9 +26,11 @@ class LRUCache(BaseCaching):
                 if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                     del_item_key, val = self.cache_data.popitem(last=False)
                     self.cache_data[key] = item
+                    self.cache_data.move_to_end(key, True)
                     print("DISCARD {}".format(del_item_key))
                 else:
                     self.cache_data[key] = item
+                    self.cache_data.move_to_end(key, True)
 
     def get(self, key):
         """Method to get item from cache at index key"""
