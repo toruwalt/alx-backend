@@ -6,7 +6,7 @@ from collections import OrderedDict
 from base_caching import BaseCaching
 
 
-class LRUCache(BaseCaching):
+class MRUCache(BaseCaching):
     """Inherited Cache Class"""
     def __init__(self):
         """Initialization method"""
