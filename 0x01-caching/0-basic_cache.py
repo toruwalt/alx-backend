@@ -13,7 +13,7 @@ class BasicCache(BaseCaching):
     def put(self, key, item):
         """Method to put item into cache at index key"""
         if type(key) is None or type(item) is None:
-            pass
+            self.cache_data[key] = item
         else:
             self.cache_data[key] = item
 
