@@ -19,7 +19,7 @@ app.url_map.strict_slashes = False
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """Gets the currect location"""
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
@@ -31,7 +31,7 @@ gettext("home_header")
 @app.route('/')
 def hello_world() -> str:
     """Return to the index.html page"""
-    return render_template('1-index.html')
+    return render_template('3-index.html')
 
 
 if __name__ == '__main__':
