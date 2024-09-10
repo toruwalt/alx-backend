@@ -14,4 +14,4 @@ def hello_world():
 
 if __name__ == '__main__':
     """Runs the app in debug mode"""
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
