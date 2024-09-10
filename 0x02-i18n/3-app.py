@@ -8,7 +8,7 @@ from flask_babel import Babel, gettext
 class Config:
     """Configuration class for i18n settings."""
     LANGUAGES = ['en', 'fr']
-    BABEL_DEFAULT_LOCALE = 'fr'
+    BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
@@ -24,10 +24,6 @@ def get_locale() -> str:
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-gettext("home_title")
-gettext("home_header")
-
-
 @app.route('/')
 def hello_world() -> str:
     """Return to the index.html page"""
@@ -36,4 +32,4 @@ def hello_world() -> str:
 
 if __name__ == '__main__':
     """Runs the app in debug mode"""
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
