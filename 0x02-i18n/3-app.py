@@ -2,13 +2,13 @@
 """Flask app for i18n"""
 import requests
 from flask import Flask, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, gettext
 
 
 class Config:
     """Configuration class for i18n settings."""
     LANGUAGES = ['en', 'fr']
-    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_LOCALE = 'fr'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
@@ -17,10 +17,15 @@ babel = Babel(app)
 app.config.from_object(Config)
 app.url_map.strict_slashes = False
 
+
 @babel.localeselector
 def get_locale():
     """Gets the currect location"""
     return request.accept_languages.best_match(app.config['LANGUAGES'])
+
+
+gettext("home_title")
+gettext("home_header")
 
 
 @app.route('/')
