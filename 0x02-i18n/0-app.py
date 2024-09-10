@@ -7,7 +7,7 @@ app.url_map.strict_slashes = False
 
 
 @app.route('/')
-def hello_world():
+def hello_world() -> str:
     """Return to the index.html page"""
     return render_template('index.html')
 
